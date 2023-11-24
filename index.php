@@ -14,6 +14,11 @@
     <div class="container">
       <h1>{{ message }}</h1>
     </div>
+    <div class="container">
+      <ul>
+        <li v-for="(todo, i) in todos" :key="i">{{todo}}</li>
+      </ul>
+    </div>
   </div>
 
 
