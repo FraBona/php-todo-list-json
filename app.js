@@ -11,5 +11,13 @@ const { createApp } = Vue
           'VUE'
         ]
       }
+    },
+    methods: {
+      requestData(){
+        axios.get('./db.php')
+      }
+    },
+    created(){
+      this.requestData();
     }
   }).mount('#app')
