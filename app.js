@@ -14,7 +14,10 @@ const { createApp } = Vue
     },
     methods: {
       requestData(){
-        axios.get('./db.php')
+        axios.get('db.php')
+        .then(res =>{
+          this.todos = res.data.results;
+        }) 
       }
     },
     created(){

@@ -1,9 +1,14 @@
 <?php 
 
-$todos = ["HTML","CSS","JAVASCRIPT","VUE"];
+$todos = ["HTML","CSS","JAVASCRIPT","VUE","PHP"];
 
 header('Content-type: application/json');
 
-echo json_encode($todos);
+$response = [
+  'success'=> true,
+  'results'=> $todos, 
+];
+
+echo json_encode($response);
 
 ?>
