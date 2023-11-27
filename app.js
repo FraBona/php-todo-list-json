@@ -13,6 +13,7 @@ const { createApp } = Vue
         axios.get('db.php')
         .then(res =>{
           this.todos = res.data.results;
+          console.log(this.todos);
         }) 
       },
       sendTodo(){
@@ -21,11 +22,13 @@ const { createApp } = Vue
         } 
         axios.post('store.php', data, {
           headers: {
-            'Content-type': 'multipart/form-data'
+            'Content-Type': 'multipart/form-data'
           },
         })
-        .then(res => {
-          this.todos = res.data.results;
+        .then((res) => {
+          this.todos = res.data.results
+          console.log(this.todos);
+          console.log(res.data.results);
         })
       }
     },

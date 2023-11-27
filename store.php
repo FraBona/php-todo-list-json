@@ -1,6 +1,6 @@
 <?php
 
-include __DIR__ . '/db.php';
+include __DIR__ . '/array.php';
 
 $textTodo = $_POST['todo'] ?? null;
 
