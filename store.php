@@ -2,6 +2,7 @@
 
 include __DIR__ . '/array.php';
 
+
 $textTodo = $_POST['todo'] ?? null;
 
 $todo = [
@@ -11,12 +12,15 @@ $todo = [
 
 $todos[] = $todo;
 
-header('Content-type: application/json');
-
 $response = [
   'success'=> true,
   'results'=> $todos, 
 ];
 
-echo json_encode($response);
+header('Content-type: application/json');
+$json =  json_encode($response);
+
+echo $json;
+
+file_put_contents("todo.json", $json)
 ?>

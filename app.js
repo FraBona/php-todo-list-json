@@ -28,7 +28,23 @@ const { createApp } = Vue
         .then((res) => {
           this.todos = res.data.results
           console.log(this.todos);
-          console.log(res.data.results);
+        })
+        this.newTodo = ''
+      },
+      destroyTodo(index){
+        const data = {
+          id: index,
+        }
+        axios.post('destroy.php', data,{
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          },
+        })
+        const removed = this.todos.splice(index, 0);
+        axios.post('destroy.php', removed,{
+          headers: {
+            'Content-Type': 'multipart/form-removed'
+          },
         })
       }
     },

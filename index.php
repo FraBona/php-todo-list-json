@@ -21,7 +21,7 @@
         <span :class="{
           done: todo.done
         }">{{todo.text}}</span>
-        <span>elimina</span></li>
+        <span @click="destroyTodo(i)">elimina</span></li>
       </ul>
     </div>
   </div>
