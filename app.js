@@ -4,12 +4,8 @@ const { createApp } = Vue
     data() {
       return {
         message: 'To do List',
-        todos: [
-          'HTML',
-          'CSS',
-          'JAVASCRIPT',
-          'VUE'
-        ]
+        todos: [],
+        newTodo: '',
       }
     },
     methods: {
@@ -18,6 +14,19 @@ const { createApp } = Vue
         .then(res =>{
           this.todos = res.data.results;
         }) 
+      },
+      sendTodo(){
+        const data = {
+          todo : this.newTodo,
+        } 
+        axios.post('store.php', data, {
+          headers: {
+            'Content-type': 'multipart/form-data'
+          },
+        })
+        .then(res => {
+          this.todos = res.data.results;
+        })
       }
     },
     created(){

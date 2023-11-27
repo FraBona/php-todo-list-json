@@ -8,3 +8,16 @@
   max-width: 1024px;
   margin: 0 auto;
 }
+
+
+.done{
+  
+  text-decoration: line-through;
+}
+
+.todo_item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px;
+}

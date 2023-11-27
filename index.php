@@ -13,10 +13,15 @@
   <div id="app">
     <div class="container">
       <h1>{{ message }}</h1>
+      <input @keyup.enter="sendTodo" type="text" placeholder="Nuova ToDo" v-model="newTodo">
     </div>
     <div class="container">
       <ul>
-        <li v-for="(todo, i) in todos" :key="i">{{todo}}</li>
+        <li class="todo_item" v-for="(todo, i) in todos" :key="i">
+        <span :class="{
+          done: todo.done
+        }">{{todo.text}}</span>
+        <span>elimina</span></li>
       </ul>
     </div>
   </div>
